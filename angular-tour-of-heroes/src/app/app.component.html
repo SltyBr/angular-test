@@ -1,0 +1,65 @@
+<h1>{{ title }}</h1>
+<fieldset>
+  <legend>2) Разобраться с односторонним и двусторонним связыванием, как происходит обработка событий( как пример click focus blur)</legend>
+  <ul>
+    <li>
+      Привязка элемента DOM к значению компонента: {{ name }}
+    </li>
+    <li>
+      Привязка к значению элемента
+      <input type="text" [value]="name">
+      <p [textContent]="name"></p>
+    </li>
+    <li>
+      Привязка к событию
+      <button (click)="logItem(name)">Добавить</button>
+      <button (focus)="logItem($event.target)">Event</button>
+    </li>
+    <li>
+      Привязка к атрибуту
+      <div [attr.name]="name"></div>
+    </li>
+    <li>
+      Двусторонняя Привязка
+      <div>{{ text }}</div>
+      <label for="text">
+        <input id="text" type="text" [(ngModel)]="text">
+      </label>
+    </li>
+    <li>
+      Привязка к классам CSS
+      <div 
+        class="box green"
+        (click)="isRed = !isRed"
+        [class.red]="isRed"
+      ></div>
+    </li>
+    <li>
+      Привязка стилей
+      <button (click)="inlineStyle = !inlineStyle">Toggle</button>
+      <div 
+        class="box"
+        [style.background-color] = "inlineStyle ? 'black' : 'gold'"
+      ></div>
+    </li>
+  </ul>
+</fieldset>
+
+<fieldset>
+  <legend>
+    3) Разобраться что из себя представляет компонента, какие свойства можно указать в декораторе @Component и со свойствами @Input и @Output
+  </legend>
+  <ul>
+    <li>
+      Директива @Input
+      <app-child [item]="currentItem"></app-child>
+    </li>
+    <li>
+      Директива @Output
+      <app-output (newItemEvent)="addItem($event)"></app-output>
+      <ul>
+        <li *ngFor="let item of items">{{item}}</li>
+      </ul>
+    </li>
+  </ul>
+</fieldset>
