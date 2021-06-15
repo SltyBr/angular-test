@@ -18,6 +18,7 @@ export class OutputComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+
   }
 
 }
