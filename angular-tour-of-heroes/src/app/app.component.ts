@@ -15,6 +15,8 @@ export class AppComponent {
 
   items = ['item1', 'item2', 'item3', 'item4'];
 
+  myVar = false;
+
   addItem(newItem: string) {
     this.items.push(newItem);
   }
