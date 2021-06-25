@@ -1,22 +1,25 @@
-import { Component, Input, OnChanges, OnInit, SimpleChanges } from '@angular/core';
+import { ChangeDetectionStrategy, ChangeDetectorRef, Component, Input, OnChanges, OnInit, SimpleChanges } from '@angular/core';
 
 @Component({
   selector: 'app-child',
   templateUrl: './child.component.html',
-  styleUrls: ['./child.component.scss']
+  styleUrls: ['./child.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class ChildComponent implements OnInit, OnChanges {
+export class ChildComponent{
   
+  constructor(private cd: ChangeDetectorRef) {}
+
   @Input() item = ''; // decorate the property with @Input()
 
-  constructor() { }
-  ngOnChanges(changes: SimpleChanges): void {
-    console.log('ngOnChanges Child Component');
-    
+  counter = 1;
+
+  timer(){
+    setInterval(()=>{
+      this.counter++;
+      this.cd.markForCheck;
+    }, 1000);
   }
 
-  ngOnInit(): void {
-    
-  }
 
 }

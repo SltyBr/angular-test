@@ -17,6 +17,10 @@ export class AppComponent {
 
   myVar = false;
 
+  changeItem(){
+    this.currentItem = "changed"
+  }
+
   addItem(newItem: string) {
     this.items.push(newItem);
   }
