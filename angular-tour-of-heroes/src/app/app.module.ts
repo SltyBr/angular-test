@@ -6,15 +6,21 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ChildComponent } from './child/child.component';
 import { OutputComponent } from './output/output.component';
+import { NgcontentComponent } from './ngcontent/ngcontent.component';
+import { CommonModule } from '@angular/common';
+import { BoldDirective } from './bold.directive';
 
 @NgModule({
   declarations: [
     AppComponent,
     ChildComponent,
-    OutputComponent
+    OutputComponent,
+    NgcontentComponent,
+    BoldDirective
   ],
   imports: [
     BrowserModule,
+    CommonModule,
     AppRoutingModule,
     FormsModule
   ],

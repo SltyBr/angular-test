@@ -79,3 +79,39 @@
     </li>
   </ul>
 </fieldset>
+<fieldset>
+  <legend>
+    6) директивы ng-template, ng-content, ng-container, ng-template outlet.
+  </legend>
+  <ul>
+    <li>
+      ng-content
+      <app-ngcontent><div class="stylesFromParent">{{ varFromParent }}</div></app-ngcontent>
+    </li>
+    <ng-container *ngIf="flag">
+      <li style="display: inline-block;">
+        ng-container example  
+      </li>
+    </ng-container>
+    <button (click)="flag = !flag">click</button>
+    <li>
+      ng-template
+      <button (click)="lessons = null">get loading</button>
+      <div class="lessons-list" *ngIf="lessons else loading">
+        ... 
+      </div>
+      
+      <ng-container *ngTemplateOutlet="loading"></ng-container>
+      <ng-template #loading>
+        <div>Loading...</div>
+      </ng-template>
+    </li>
+  </ul>
+</fieldset>
+<fieldset>
+  <legend>
+    7) Посмотреть как делать кастомные структурные директивы
+  </legend>
+  <h2>Bold Attribute Directive</h2>
+  <p appBold>hello world</p>
+</fieldset>

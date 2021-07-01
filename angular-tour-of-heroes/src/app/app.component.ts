@@ -12,6 +12,20 @@ export class AppComponent {
   isRed = false;
   inlineStyle = true;
   currentItem = 'from Parent';
+  varFromParent = 'var from parent';
+  flag = true;
+
+  loginText = 'Login';
+  signUpText = 'Sign Up'; 
+  lessons = ['Lesson 1', 'Lessons 2'];
+
+  login() {
+      console.log('Login');
+  }
+
+  signUp() {
+      console.log('Sign Up');
+  }
 
   items = ['item1', 'item2', 'item3', 'item4'];
 
